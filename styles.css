@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+#products {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item {
+    display: block;
+    text-align: center;
+    border: 2px solid black;
+    margin: 2rem;
+    width: 300px;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.item > img {
+    width: 150px;
+}
+
+.item h4, p {
+    text-align: start;
+    font-weight: 500;
+    font-size: large;
+    padding: 10px;
+}
