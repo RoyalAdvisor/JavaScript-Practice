@@ -93,20 +93,27 @@
 
 // console.log(sum(input))
 
-fetch('https://fakestoreapi.com/products')
-.then(response => response.json())
-.then(data = function(data){
-    console.log(data)
-    data.forEach(product => {
-        document.querySelector('#products').innerHTML += `
-        <div class = "item">
-            <h4>${product.title}</h4>
-            <img src = ${product.image}>
-            <p>${product.price}</p>
-            <p>${product.description}</p>
-        </div>
-        `
-    });
-})
+// fetch('https://fakestoreapi.com/products')
+// .then(response => response.json())
+// .then(data = function(data){
+//     console.log(data)
+//     data.forEach(product => {
+//         document.querySelector('#products').innerHTML += `
+//         <div class = "item">
+//             <h4>${product.title}</h4>
+//             <img src = ${product.image}>
+//             <p>${product.price}</p>
+//             <p>${product.description}</p>
+//         </div>
+//         `
+//     });
+// })
 
+fetch('https://api.kanye.rest/')
+.then(response => response.json())
+.then(data = (data) => {
+    document.querySelector('#kanye').innerHTML += `
+    <h1>${data.quote}</h1> 
+`
+})
 
