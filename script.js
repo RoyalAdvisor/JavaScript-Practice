@@ -122,31 +122,51 @@ fetch('https://pokeapi.co/api/v2/pokemon/charizard')
 .then(data = (data) => {
     console.log(data);
     document.querySelector('.charizard').innerHTML += `
-    <div class = "card">
-    <h1>${data.name}</h1>
-        <img src = '${data.sprites.front_default}'>
-        <img src = '${data.sprites.back_default}'>
-        <div class = "details">
-            <h3>TYPE</h3>
-            <p>${data.types[0].type.name}</p>
-            <h3>ABILITIES</h3>
-            <p>${data.abilities[0].ability.name}</p>
-            <p>${data.abilities[1].ability.name}</p>
-            <h3>STATS</h3>
-            <h5>HP</h5>
-            <p> <span>Base Stat : </span>${data.stats[0].base_stat}</p>
-            <h5>ATTACK</h5>
-            <p> <span>Base Stat : </span>${data.stats[1].base_stat}</p>
-            <h5>DEFENSE</h5>
-            <p> <span>Base Stat : </span>${data.stats[2].base_stat}</p>
-            <h5>SPECIAL-ATTACK</h5>
-            <p> <span>Base Stat : </span>${data.stats[3].base_stat}</p>
-            <h5>SPECIAL-DEFENSE</h5>
-            <p> <span>Base Stat : </span>${data.stats[4].base_stat}</p>
-            <h5>SPEED</h5>
-            <p> <span>Base Stat : </span>${data.stats[5].base_stat}</p>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src = '${data.sprites.front_default}'>
+            </div>
+            <div class="flip-card-back">
+                <div class = "headings">
+                    <h1>CHARIZARD</h1>
+                    <h3>TYPE</h3>
+                    <p>${data.types[0].type.name}</p>
+                    <h3>ABILITIES</h3>
+                    <p>${data.abilities[0].ability.name}</p>
+                    <p>${data.abilities[1].ability.name}</p>
+                    <h3>STATS</h3>
+                </div>
+                <div class = "stats">
+                    <div>
+                        <h5>HP</h5>
+                        <p> <span>Base Stat: </span>${data.stats[0].base_stat}</p>
+                    </div>
+                    <div>
+                        <h5>ATTACK</h5>
+                        <p> <span>Base Stat: </span>${data.stats[1].base_stat}</p>
+                    </div>
+                    <div>
+                        <h5>DEFENSE</h5>
+                        <p> <span>Base Stat: </span>${data.stats[2].base_stat}</p>
+                    </div>
+                    <div>
+                        <h5>S-ATTACK</h5>
+                        <p> <span>Base Stat: </span>${data.stats[3].base_stat}</p>
+                    </div>
+                    <div>
+                        <h5>S-DEFENSE</h5>
+                        <p> <span>Base Stat: </span>${data.stats[4].base_stat}</p>
+                    </div>
+                    <div>
+                        <h5>SPEED</h5>
+                        <p> <span>Base Stat: </span>${data.stats[5].base_stat}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     `
 })
+
 

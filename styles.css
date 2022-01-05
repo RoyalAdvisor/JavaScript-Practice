@@ -1,7 +1,6 @@
 body {
-    margin: 0;
-    padding: 0;
     display: flex;
+    align-items: center;
     justify-content: center;
     background-image: url(/images/wallpaper2you_147653.jpg);
     background-size: cover;
@@ -9,30 +8,68 @@ body {
     height: 100vh;
 }
 
-.charizard {
-    display: flex;
-    justify-content: center;
-    text-align: start;
-    line-height: 5px;
-    font-size: 18px;
+
+.flip-card {
     background-color: transparent;
-    color: black;
-    width: 800px;
-    margin: 5rem;
-    padding: 20px;
+    width: 600px;
+    height: 600px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 3px solid red;
     border-radius: 10px;
 }
-
-
-.charizard img {
-    width: 300px;
+.flip-card-front {
+    background-color: #fff;
+    color: black;
+    width: 600px;
+    height: 600px;
 }
 
-h1 {
-    font-size: 50px;
-    text-align: center;
+.flip-card-front img {
+    width: 600px;
+    height: 600px;
 }
 
-h3 {
-    text-align: center;
+.flip-card-back {
+    width: 600px;
+    height: 600px;
+    background-color: red;
+    color: white;
+    transform: rotateY(180deg);
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stats div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
